@@ -1,78 +1,123 @@
-*{
+*{/**********pour enlver le style predefinie******************/
     margin: 0;
     padding: 0;
 }
-/**header***/
+/*******fonts********/
+@font-face {
+    font-family: 'Brannboll Fet';
+    src: url('../fonts/BrannbollFet.eot');
+    src: url('../fonts/BrannbollFet.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/BrannbollFet.woff2') format('woff2'),
+        url('../fonts/BrannbollFet.woff') format('woff'),
+        url('../fonts/BrannbollFet.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FuturaExtended';
+    src: url('../fonts/FuturaExtended.eot');
+    src: url('../fonts/FuturaExtended.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/FuturaExtended.woff2') format('woff2'),
+        url('../fonts/FuturaExtended.woff') format('woff'),
+        url('../fonts/FuturaExtended.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+/*********fin fonts**************/
+/** debut header***/
 header{
-    height: 100vh; /***la hauteur de l'ecran***/
-    background: url(../img/fond.jpg) center bottom fixed; /******centrer limage et la fixer********/
-    background-size: cover;
+    height: 100vh; /***100 %,la hauteur de l'ecran***/
+    background: url("../img/fond.jpg") center bottom fixed; /******centrer limage et la fixer et positionner********/
+    background-size: cover; /*****occuper tout lespace et renier le reste********/
     display: flex;/***mettre les efants les un a coter des autres****/
     justify-content: center; /***répartition sur la largeur****/
     align-items: center; /***répartition sur la hauteur****/
 
 }
-header nav{
-
-    position: fixed;
-    top: 50%;
-    left: 5%;
+header nav{/*******preciser que cest la nav de mon header*********/
+    position: fixed; /*****bloque la navigation au scroll******/
+    top: 50%; /****positionnement de la hauteur de la nav******/
+    left: 5%;/********positionnement de la largeur de la nav*****************/
 }
 header nav ul{
-    
-    height: 50px;/***hauteur de la ul**/
-    display: block;
     list-style: none;/**enléve les ronds de la liste**/
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: fixed;
-   
 
 }
 header nav ul li {
     margin: 0 80px;
-    text-indent: 1.5em; 
-    margin-top: 10px;
     text-transform: uppercase;
-    font-size: x-large;
-    color: white;
+    font-size: 16px;
+    padding: 10px 0;
+    text-shadow: 2px 2px 6px black;/*********decallage sur x et decallage sur y et le flou et rajouter une couleur a lombre***************/
     }
+    header nav ul li:first-of-type {
+        border-bottom: 3px solid white; /* une bordure sur la première li de la nav***mettre tjr l epaisseur la couleur et le style***/
+        }
 
 header nav ul li a{
     text-decoration: none; /* enleve le soulignement*/
     color: white; /* couleur du texte*/
-    font-family: arial, Arial, Helvetica, sans-serif; /**change la famille de typo */
-    font-weight: bold; /**change la graisse de la typo*/
+    font-size: 30px; /*********taille du texte**************/
+    font-family:'FuturaExtended'; /**change la famille de typo */
+    font-weight: bold; /**change l'epaisseur du texte */
     text-transform: uppercase; /**passe le texte en majiscule*/
+
     
 }
 header nav ul li a:hover {
-    border-bottom: 2px solid black; /** ajoute une bordure en bas lors du survol de couleur blanche */
     opacity: 0.5; /**va creer une opacité au survol**/
-    color: black; /**couleur au survol du texte**/
+    color: black; /**couleur au survol du texte*
+    */
 }
 header > div{
-    height: calc(100vh - 50px);/**pour que la div occupe le reste de l'ecran on retire les 50px de la hauteur de la nav au 100vh(hauteur du header)**/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-header >div>div{/**selectionne la div enfant dans la div mere**/
-    width: 150px;/**toujours donner une taille a sa div**/
-    height: 150px;
-    
-   
-}
-header div h1 {/*********selectionne la div qui contient le texte************/
-    width: 200px;
-    height: 200px;
-    background-color: black ;
-    border-radius: 50%;
-    color: white;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    font-style: italic;
+    width: 250px;/*******largeur de la div***********/
+    height: 250px; /**********hauteur de la div*************/
+    border-radius: 50%; /******permet  d arrondir les angles*******/
+    background-color: black ; /****fond de couleur****/
+    display: flex;/*******centrer le texte dans la div et devnir flexible********/
+    justify-content: center; /*********repartition sur la largeur**************/
+    align-items: center;/*********repartition sur la hauteur**************/
 }
 
+header div h1 {/*********selectionne la div qui contient le texte************/
+
+    color: white;
+    text-align: center;
+    font-size: 40px;/*******la taille de la font*******/
+    line-height: 46px;/*****interlignage*******/
+    font-family: 'Brannboll Fet';
+}
+header div h1::first-letter{/*********selectionne la premeire lettre en majuscule************/
+text-transform: uppercase;
+}
+/******************fin header************************/
+main {
+    background-color: rgb(34, 32, 32);
+    padding: 100px 0; /*****ajoute du rembourage (marge interne) à la section*******************/
+    display: flex;
+    justify-content: end;/****centre les div enfants********/
+}
+section {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+   }
+section div {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;/**********pour controler le debordement du contenu***********/
+    margin: 25px;
+   
+}
+section>div>img{
+    width: 100%;
+}
+footer{
+    background-color: aquamarine;
+    text-align: center;
+}
