@@ -44,6 +44,8 @@ header nav{/*******preciser que cest la nav de mon header*********/
     position: fixed; /*****bloque la navigation au scroll******/
     top: 50%; /****positionnement de la hauteur de la nav******/
     left: 5%;/********positionnement de la largeur de la nav*****************/
+    transform: translateY(-50%);/**********permet de remonter de 50% de la taille de l'élement pour le centrer *
+    parfaitement *****************/
 }
 header nav ul{
     list-style: none;/**enléve les ronds de la liste**/
