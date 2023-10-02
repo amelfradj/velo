@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+html{
+    scroll-behavior: smooth;/*ajoute un effet sur le scroll au clique*/
+}
 /*******fonts********/
 @font-face {
     font-family: 'Brannboll Fet';
@@ -87,7 +90,7 @@ header div h1 {/*********selectionne la div qui contient le texte************/
     color: white;
     text-align: center;
     font-size: 40px;/*******la taille de la font*******/
-    line-height: 46px;/*****interlignage*******/
+    line-height: 50px;/*****interlignage*******/
     font-family: 'Brannboll Fet';
 }
 header div h1::first-letter{/*********selectionne la premeire lettre en majuscule************/
@@ -102,22 +105,52 @@ main {
 }
 section {
     width: 70%;
+    padding: 100px 0;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    
+   }
+   section>div{//*****div de premier niveau*****/
+    overflow: hidden;/*******masque les element de depassement*********/
+    position: relative;/**permet a la div enfant de dependre de son parent**********/
+    cursor: pointer;/*****change le curseur de la,souris en main*******/
+    margin: 25px;
    }
 section div {
-    width: 200px;
-    height: 200px;
+    width: 200px;/******largeur de la div*********/
+    height: 200px;/******hauteur de la div*********/
     border-radius: 50%;
     overflow: hidden;/**********pour controler le debordement du contenu***********/
-    margin: 25px;
-   
-}
+    position: relative;/************permet a la div enfnat (absolute) de dependre de son parent**********/
+  }
 section>div>img{
-    width: 100%;
+    width: 100%;/******fait 100% de la taille de son parent*******/
+    opacity: 0.7;//******opacité de l'image******/
+    transition: 0.5s;/*******la transition se met sur l'element*******/
+}
+
+
+section >div>div{
+    position: absolute;
+   top: 0;
+   left: 0;
+   background: rgba(199, 184, 184, 0.8);
+   transform: scale(0.8); /******permet la reduction par le centre*****/
+   transition: 0.5s;/****la transition se met sur l'element qui s 'anime*****/
+}
+section>div:hover div{/**********hover sur le parent pour atteindre lenfant**********/
+    transform: scale(0);/******va creer une reduction**********/
+}
+section>div:hover img{/******hover sur le parent pour atteindre l'enfant********/
+    transform: scale(1.2);/*******va creer un agrandissement*******/
 }
 footer{
-    background-color: aquamarine;
-    text-align: center;
+    height: 300px;
+    background-color: rgb(142, 147, 145);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Brannboll Fet';
+    text-transform: capitalize;
 }
