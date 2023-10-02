@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/**header***/
+header{
+    height: 100vh; /***la hauteur de l'ecran***/
+    background: url(../img/fond.jpg) center bottom fixed; /******centrer limage et la fixer********/
+    background-size: cover;
+    display: flex;/***mettre les efants les un a coter des autres****/
+    justify-content: center; /***répartition sur la largeur****/
+    align-items: center; /***répartition sur la hauteur****/
+
+}
+header nav{
+
+    position: fixed;
+    top: 50%;
+    left: 5%;
+}
+header nav ul{
+    
+    height: 50px;/***hauteur de la ul**/
+    display: block;
+    list-style: none;/**enléve les ronds de la liste**/
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+   
+
+}
+header nav ul li {
+    margin: 0 80px;
+    text-indent: 1.5em; 
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: x-large;
+    color: white;
+    }
+
+header nav ul li a{
+    text-decoration: none; /* enleve le soulignement*/
+    color: white; /* couleur du texte*/
+    font-family: arial, Arial, Helvetica, sans-serif; /**change la famille de typo */
+    font-weight: bold; /**change la graisse de la typo*/
+    text-transform: uppercase; /**passe le texte en majiscule*/
+    
+}
+header nav ul li a:hover {
+    border-bottom: 2px solid black; /** ajoute une bordure en bas lors du survol de couleur blanche */
+    opacity: 0.5; /**va creer une opacité au survol**/
+    color: black; /**couleur au survol du texte**/
+}
+header > div{
+    height: calc(100vh - 50px);/**pour que la div occupe le reste de l'ecran on retire les 50px de la hauteur de la nav au 100vh(hauteur du header)**/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+header >div>div{/**selectionne la div enfant dans la div mere**/
+    width: 150px;/**toujours donner une taille a sa div**/
+    height: 150px;
+    
+   
+}
+header div h1 {/*********selectionne la div qui contient le texte************/
+    width: 200px;
+    height: 200px;
+    background-color: black ;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-style: italic;
+}
+
